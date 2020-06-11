@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { Formik, Field } from "formik";
 import { useHistory } from "react-router-dom";
-import * as firebase from "firebase";
-import { firebaseAuth } from "../index";
 
 import IconButton from "@material-ui/core/IconButton";
 import Home from "@material-ui/icons/Home";
@@ -13,37 +11,24 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import styles from "./entrance.styles";
 
-function authenticate(values) {
-  const { email, password } = values;
-  firebaseAuth
-    .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .then(function () {
-      return firebaseAuth
-        .signInWithEmailAndPassword(email, password)
-        .catch(function (error) {
-          console.log(error);
-        });
-    });
-}
+function authenticate(values) {}
 
-function signout() {
-  firebaseAuth.signOut();
-}
+function signout() {}
 
 export default (props) => {
   const classes = styles();
   const history = useHistory();
 
-  useEffect(() => {
-    // auth state listener
-    firebaseAuth.onAuthStateChanged(function (user) {
-      if (user) {
-        console.log(user);
-      } else {
-        console.log("no user");
-      }
-    });
-  });
+  // useEffect(() => {
+  //   // auth state listener
+  //   firebaseAuth.onAuthStateChanged(function (user) {
+  //     if (user) {
+  //       console.log(user);
+  //     } else {
+  //       console.log("no user");
+  //     }
+  //   });
+  // });
 
   return (
     <div className={classes.wrapper}>

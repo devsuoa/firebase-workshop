@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Field } from "formik";
 import { useHistory } from "react-router-dom";
-import { firebaseAuth, firebaseFirestore } from "../index";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -16,71 +15,7 @@ export default (props) => {
   const history = useHistory();
   const classes = styles();
 
-  const writeToDatabase = (values) => {
-    console.log(firebaseAuth.currentUser);
-    const uid = firebaseAuth.currentUser.uid;
-
-    const post = {
-      title: values.title,
-      description: values.description,
-      image: "https://source.unsplash.com/random",
-    };
-
-    firebaseFirestore
-      .collection("posts")
-      .doc(uid)
-      .set({ posts: [post] })
-      .then(function () {
-        console.log("write successful");
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  const updateDocument = (values) => {
-    console.log("running");
-    const uid = firebaseAuth.currentUser.uid;
-    let data = null;
-    const post = {
-      title: values.title,
-      description: values.description,
-      image: "https://source.unsplash.com/random",
-    };
-
-  //   console.log("here");
-  //   // fetch data in db
-  //   firebaseFirestore
-  //     .collection("posts")
-  //     .doc(uid)
-  //     .get()
-  //     .then(function (doc) {
-  //       if (doc.exists) {
-  //         console.log(doc.data());
-  //         data = doc.data().posts;
-  //       } else {
-  //         console.log("no such document!");
-  //       }
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-
-  //   console.log(data);
-  //   data = [...data, post];
-
-  //   console.log("here");
-  //   firebaseFirestore
-  //     .collection("posts")
-  //     .doc(uid)
-  //     .update({ posts: [post] })
-  //     .then(function () {
-  //       console.log("doc successfully updated");
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // };
+  const writeToDatabase = (values) => {};
 
   return (
     <div className={classes.wrapper}>
@@ -99,7 +34,7 @@ export default (props) => {
         <Formik
           initialValues={{ title: "", caption: "" }}
           onSubmit={(values, actions) => {
-            updateDocument(values);
+            writeToDatabase(values);
             actions.resetForm();
             actions.setSubmitting(false);
           }}

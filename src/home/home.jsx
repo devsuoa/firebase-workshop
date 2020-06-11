@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { firebaseFirestore, firebaseAuth } from "../index";
 
 import Grid from "@material-ui/core/Grid";
 import AppBar from "@material-ui/core/AppBar";
@@ -22,56 +21,25 @@ export default (props) => {
   const history = useHistory();
   const classes = styles();
 
-  const subscribeToDatabase = () => {
-    if (user) {
-      firebaseFirestore
-        .collection("posts")
-        .doc(user.uid)
-        .onSnapshot(function (doc) {
-          let dbData = doc.data();
-          setData(dbData.posts);
-        });
-    }
-  };
+  const subscribeToDatabase = () => {};
 
-  const fetchData = () => {
-    console.log(user);
-    if (user) {
-      firebaseFirestore
-        .collection("posts")
-        .doc(user.uid)
-        .get()
-        .then(function (doc) {
-          if (doc.exists) {
-            console.log(doc.data());
-            setData(doc.data().posts);
-          } else {
-            console.log("no such document!");
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-  };
+  const fetchData = () => {};
 
-  //
-  useEffect(() => {
-    subscribeToDatabase();
-  }, [user]);
+  // useEffect(() => {
 
-  // Auth state listener
-  useEffect(() => {
-    firebaseAuth.onAuthStateChanged(function (user) {
-      if (user) {
-        setUser(user);
-      } else {
-        console.log("no user");
-      }
-    });
-  }, []);
+  // }, [user]);
 
-  console.log(data);
+  // // Auth state listener
+  // useEffect(() => {
+  //   firebaseAuth.onAuthStateChanged(function (user) {
+  //     if (user) {
+  //       setUser(user);
+  //     } else {
+  //       console.log("no user");
+  //     }
+  //   });
+  // }, []);
+
   return (
     <div className={classes.wrapper}>
       <AppBar position="fixed">
