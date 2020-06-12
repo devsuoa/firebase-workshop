@@ -6,15 +6,14 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyC_A55BZVx-2ooULgzwUaeL1Jf7g1QKvkA",
-  authDomain: "gallery-demo-1a44b.firebaseapp.com",
-  databaseURL: "https://gallery-demo-1a44b.firebaseio.com",
-  projectId: "gallery-demo-1a44b",
-  storageBucket: "gallery-demo-1a44b.appspot.com",
-  messagingSenderId: "1018056785989",
-  appId: "1:1018056785989:web:82048246f14ba6ea03a32c",
-  measurementId: "G-7LK2DE2GZZ",
+var firebaseConfig = {
+  apiKey: "AIzaSyADU-w4-KX9IlxnvK-zxmO7WkZV7oqeNtU",
+  authDomain: "gallery-app-22b53.firebaseapp.com",
+  databaseURL: "https://gallery-app-22b53.firebaseio.com",
+  projectId: "gallery-app-22b53",
+  storageBucket: "gallery-app-22b53.appspot.com",
+  messagingSenderId: "1050282241749",
+  appId: "1:1050282241749:web:7b38fb740ecbf011223c5c",
 };
 
 firebase.initializeApp(firebaseConfig);

@@ -22,20 +22,9 @@ export default (props) => {
   const history = useHistory();
   const classes = styles();
 
-  const subscribeToDatabase = () => {
-    if (user) {
-      firebaseFirestore
-        .collection("posts")
-        .doc(user.uid)
-        .onSnapshot(function (doc) {
-          let dbData = doc.data();
-          setData(dbData.posts);
-        });
-    }
-  };
-
   const fetchData = () => {
-    console.log(user);
+    // will only attempt to fetch data
+    // if there is a user logged in!
     if (user) {
       firebaseFirestore
         .collection("posts")
@@ -55,9 +44,9 @@ export default (props) => {
     }
   };
 
-  //
+  // calls fetchData() on mount
   useEffect(() => {
-    subscribeToDatabase();
+    fetchData();
   }, [user]);
 
   // Auth state listener
