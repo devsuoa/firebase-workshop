@@ -32,7 +32,6 @@ export default (props) => {
         .get()
         .then(function (doc) {
           if (doc.exists) {
-            console.log(doc.data());
             setData(doc.data().posts);
           } else {
             console.log("no such document!");
@@ -60,7 +59,6 @@ export default (props) => {
     });
   }, []);
 
-  console.log(data);
   return (
     <div className={classes.wrapper}>
       <AppBar position="fixed">
@@ -78,7 +76,6 @@ export default (props) => {
         <Grid container spacing={3}>
           {data.length > 0 ? (
             data.map((post) => {
-              console.log(post);
               return (
                 <Grid xs={12} sm={6} med={4} lg={4} item>
                   <Card className={classes.root}>
