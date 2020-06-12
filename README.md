@@ -1,68 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DEVS Firebase workshop 2020
 
-## Available Scripts
+Welcome to the git repository for DEVS' firebase workshop for 2020! Here you will find setup instructions to be completed before the workshop, as well as examples of completed exercises to look back on after the workshop.
 
-In the project directory, you can run:
+# Getting started
 
-### `yarn start`
+PLEASE CREATE A GOOGLE ACCOUNT BEFORE THE WORKSHOP - using your university google account will do if you don't want to use your private account.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Below you will find instructions and guides to download the tools we'll need for the workshop.
+Once you've completed the steps below please clone the repository and be on the master branch.
+The finished code is available on the finished-app branch.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Happy coding!
 
-### `yarn test`
+The firebase workshop requires some software to be installed on your computer.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Visual Studio Code](https://code.visualstudio.com/): A text editor which we will be writing our code in (You can also use your own editor if you like)
+- [Node.js](https://nodejs.org/en/): Used to run our javascript code.
+- [Yarn](https://classic.yarnpkg.com/en/docs/install/): Used to download packages that other people have written.
 
-### `yarn build`
+## Windows
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A video of the setup process has been recorded for you if you get stuck. https://youtu.be/Yv-Se-KbFa8
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Visual Studio Code
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Download the windows installer from https://code.visualstudio.com/
+- Run the installer once downloaded
+- Follow the installation steps
 
-### `yarn eject`
+## Node.js
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Download the windows LTS installer from https://nodejs.org/en/download/
+- Run the installer once downloaded
+- Follow the installation steps
+- Open the windows command prompt (search for cmd)
+- Verify that node is installed by running `node --version`. The node version (e.g. v12.16.0) should be returned.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Yarn
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Download the windows installer from https://classic.yarnpkg.com/en/docs/install/#windows-stable
+- Run the installer once downloaded
+- Follow the installation steps
+- Open the windows command prompt (search for cmd)
+- Verify that yarn is installed by running `yarn --version`. The yarn version (e.g.v1.22.0) should be returned.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## MacOS
 
-## Learn More
+A video of the setup process has been recorded for you if you get stuck. https://www.youtube.com/watch?v=Ntv5XS4NBfU
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We will use homebrew to install all of the software for mac. Install homebrew by pasting the following command into the terminal (spotlight and search for terminal).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
-### Code Splitting
+### Visual Studio Code
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- Run the following command in the terminal
 
-### Analyzing the Bundle Size
+```
+brew cask install visual-studio-code
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Node.js
 
-### Making a Progressive Web App
+- Run the following command in the terminal
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
+brew install node
+```
 
-### Advanced Configuration
+- Verify that node is installed by running `node --version`. The node version (e.g. v12.16.0) should be returned.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Yarn
 
-### Deployment
+- Run the following command in the terminal
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```
+brew install yarn
+```
 
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Verify that yarn is installed by running `yarn --version`. The yarn version (e.g. v1.22.0) should be returned.

@@ -21,8 +21,6 @@ export default (props) => {
   const history = useHistory();
   const classes = styles();
 
-  const subscribeToDatabase = () => {};
-
   const fetchData = () => {};
 
   // useEffect(() => {

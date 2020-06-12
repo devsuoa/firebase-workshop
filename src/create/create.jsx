@@ -15,6 +15,8 @@ export default (props) => {
   const history = useHistory();
   const classes = styles();
 
+  const updateDocument = (values) => {};
+
   const writeToDatabase = (values) => {};
 
   return (
